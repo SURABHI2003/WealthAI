@@ -1387,6 +1387,7 @@
 from flask import Flask, request, render_template_string
 from multi_agent import run_agent_sync
 import re
+import os
 
 app = Flask(__name__)
 
@@ -1700,5 +1701,9 @@ def home():
 # -----------------------------
 # RUN
 # -----------------------------
-if __name__=="__main__":
-    app.run(debug=True)
+# if __name__=="__main__":
+#     app.run(debug=True)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
