@@ -72,8 +72,6 @@ The following files are intentionally excluded from the repository:
 
 ```
 .env
-try.py
-simple_agent.py
 __pycache__/
 ```
 
