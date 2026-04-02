@@ -1384,12 +1384,16 @@
 
 
 
-from flask import Flask, request, render_template_string
+from flask import Flask, request, render_template_string, render_template
 from multi_agent import run_agent_sync
 import re
 import os
 
 app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 # -----------------------------
 # FORMAT STOCK RESPONSE → CARDS
